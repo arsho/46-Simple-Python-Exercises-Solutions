@@ -7,9 +7,8 @@ if it is a palindrome
 
 def palindrome(string):
     string = string.lower()    
-    string = string.replace(" ","")
-    string = string.replace("\n","")    # lines contain '\n'
-    tem = ['.',',','!','?','\"',"\'"]   # in file, need to remove
+    string = string.replace(" ","").replace("\n","")   # lines contain '\n'
+    tem = ['.',',','!','?','\"',"\'"]                  # in file, need to remove
     for i in tem:
         string = string.replace(i,"")
     tmp=''
