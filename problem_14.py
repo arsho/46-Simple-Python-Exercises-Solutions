@@ -4,14 +4,11 @@ of integers representing
 the lengths of the correponding words
 '''
 
-def count(list_var):
-    value = []
-    for i in list_var:
-        count = 0
-        for j in i:
-            count += 1
-        value.append(count)
-    return value
+def map_word_length(word_list):
+    word_length = [len(single_word) for single_word in word_list]
+    word_map = dict(zip(word_list,word_length))
+    return word_map
 
-ab = ['abc','defgh','pqrstuvw']
-print(count(ab))
+word_list = ['abc','defgh','pqrstuvw']
+word_map = map_word_length(word_list)
+print(word_map)
