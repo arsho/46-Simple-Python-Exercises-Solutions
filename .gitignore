@@ -1,0 +1,16 @@
+.vscode/
+.DS_Store
+*.pyc
+/static
+
+.idea
+*.idea
+
+venv/
+venv/*
+
+.coverage
+cover
+xunittest.xml
+
+__pycache__
