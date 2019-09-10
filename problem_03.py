@@ -5,11 +5,18 @@ Define a function that computes the length of a given list or string.
 (It is true that Python has the len() function built in, but writing it
 yourself is nevertheless a good exercise.)
 """
-from typing import Union
 import unittest
+from typing import Union
 
 
-def is_valid_type(data):
+def is_valid_type(data: Union[list, str]) -> bool:
+    """
+    Checks if the parameter is valid data type
+    :param data: input parameter
+    :type data: list or str
+    :return: returns True if data is str or list, False otherwise
+    :rtype: boolean
+    """
     if not isinstance(data, str) and not isinstance(data, list):
         return False
     return True
@@ -17,7 +24,9 @@ def is_valid_type(data):
 
 def custom_len(given_list_or_string: Union[list, str]) -> int:
     """
-
+    Returns the length of the passed string or list type object.
+    :param: given_list_or_string: input parameter
+    :type given_list_or_string: list or str
     :rtype: int
     :raise TypeError: Parameter should be list or string type
     """

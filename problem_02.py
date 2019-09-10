@@ -4,11 +4,18 @@ Statement:
 Define a function max_of_three() that takes three numbers as arguments and
 returns the largest of them.
 """
-
+from typing import Union
 import unittest
 
 
-def is_valid_type(data):
+def is_valid_type(data: Union[int, float]) -> bool:
+    """
+    Checks if the parameter is valid data type
+    :param data: input parameter
+    :type data: int or float
+    :return: returns True if data is int or float, False otherwise
+    :rtype: boolean
+    """
     if not isinstance(data, int) and not isinstance(data, float):
         return False
     return True

@@ -8,7 +8,14 @@ returns True if it is a vowel, False otherwise.
 import unittest
 
 
-def is_valid_type_and_length(data):
+def is_valid_type_and_length(data: str) -> bool:
+    """
+    Checks if data is a single string type character
+    :param data: input data
+    :type data: str
+    :return: True if data is a single type character, False otherwise
+    :rtype: bool
+    """
     if not isinstance(data, str) or len(data) != 1:
         return False
     return True
