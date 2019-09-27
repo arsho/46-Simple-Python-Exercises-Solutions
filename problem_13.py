@@ -32,7 +32,7 @@ def max_in_list_alternative_2(numbers):
     return None
 
 
-class TestHistogram(unittest.TestCase):
+class TestMaxInList(unittest.TestCase):
     def setUp(self):
         self.input_list_1 = [3, 7, 98, 34, 12, 14]
         self.expected_solution_1 = 98
