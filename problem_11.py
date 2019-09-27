@@ -10,11 +10,35 @@ in that you can actually write an expression
 ignore that the problem can
 be solved in this manner.)
 '''
+import unittest
 
-def generate_n_chars(n,c):
+
+def generate_n_chars(n, c):
     s = ''
     for i in range(n):
         s += c
     return s
 
-print(generate_n_chars(5,"x"))
+
+def generate_n_chars_alternative(n, c):
+    s = ''.join([c for i in range(n)])
+    return s
+
+
+class TestGenerateNChars(unittest.TestCase):
+    def setUp(self):
+        self.c = "x"
+        self.n = 5
+        self.expected_solution = "xxxxx"
+
+    def test_generate_n_chars(self):
+        self.assertEqual(generate_n_chars(self.n, self.c),
+                         self.expected_solution)
+
+    def test_generate_n_chars_alternative(self):
+        self.assertEqual(generate_n_chars_alternative(self.n, self.c),
+                         self.expected_solution)
+
+
+if __name__ == "__main__":
+    unittest.main()

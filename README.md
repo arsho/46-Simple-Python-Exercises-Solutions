@@ -14,6 +14,10 @@ In order for better categorization, the exercises have been divided into 4 secti
 
 This repository also includes the PDF file of the exercises.
 
+### Update
+
+The solutions are rewritten using Python 3 and each solution includes relevant test cases.
+
 ## Contributing
 Everyone is welcome to contribute. Feel free to submit a pull request, issue or suggestion you may find relevant.
 
