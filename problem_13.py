@@ -7,31 +7,88 @@ or suppose we cannot tell in advance how many
 they are? Write a function max_in_list()that takes a
 list of numbers and returns the largest one
 '''
-
-def a(listname):
-    length = len(listname)
-    tmp = []
-    for i in range(0,length-1):
-        maximum = max(listname[i],listname[i+1])
-        tmp.append(maximum)
-    return tmp  
-
-def max_in_list(abc):
-    if len(abc) == 1:
-        return abc[0]
-    else:
-        return max_in_list(a(abc))
-
-ab = [3,7,98,34,12,14]
-print(max_in_list(ab))
-    
+import unittest
 
 
-######################################################
-###################### shortcut ######################
-######################################################
+def max_in_list(numbers):
+    if len(numbers) > 0:
+        max_number = numbers[0]
+        for i in numbers:
+            if i > max_number:
+                max_number = i
+        return max_number
+    return None
 
-def maximum(list_var):
-    list_var.sort()
-    return list_var[-1]
-print(maximum(ab))
+
+def max_in_list_alternative_1(numbers):
+    if len(numbers) > 0:
+        return max(numbers)
+    return None
+
+
+def max_in_list_alternative_2(numbers):
+    if len(numbers) > 0:
+        return sorted(numbers)[-1]
+    return None
+
+
+class TestHistogram(unittest.TestCase):
+    def setUp(self):
+        self.input_list_1 = [3, 7, 98, 34, 12, 14]
+        self.expected_solution_1 = 98
+        self.input_list_2 = [-3, -7, -98, -34, -12, -14]
+        self.expected_solution_2 = -3
+        self.input_list_3 = [-3, 7, -98, 34, 12, 14, 0]
+        self.expected_solution_3 = 34
+        self.input_list_4 = [0, 0, 0]
+        self.expected_solution_4 = 0
+        self.input_list_5 = [-10, -10, -10]
+        self.expected_solution_5 = -10
+        self.input_list_6 = []
+        self.expected_solution_6 = None
+
+    def test_max_in_list(self):
+        self.assertEqual(max_in_list(self.input_list_1),
+                         self.expected_solution_1)
+        self.assertEqual(max_in_list(self.input_list_2),
+                         self.expected_solution_2)
+        self.assertEqual(max_in_list(self.input_list_3),
+                         self.expected_solution_3)
+        self.assertEqual(max_in_list(self.input_list_4),
+                         self.expected_solution_4)
+        self.assertEqual(max_in_list(self.input_list_5),
+                         self.expected_solution_5)
+        self.assertEqual(max_in_list(self.input_list_6),
+                         self.expected_solution_6)
+
+    def test_max_in_list_alternative_1(self):
+        self.assertEqual(max_in_list_alternative_1(self.input_list_1),
+                         self.expected_solution_1)
+        self.assertEqual(max_in_list_alternative_1(self.input_list_2),
+                         self.expected_solution_2)
+        self.assertEqual(max_in_list_alternative_1(self.input_list_3),
+                         self.expected_solution_3)
+        self.assertEqual(max_in_list_alternative_1(self.input_list_4),
+                         self.expected_solution_4)
+        self.assertEqual(max_in_list_alternative_1(self.input_list_5),
+                         self.expected_solution_5)
+        self.assertEqual(max_in_list_alternative_1(self.input_list_6),
+                         self.expected_solution_6)
+
+    def test_max_in_list_alternative_2(self):
+        self.assertEqual(max_in_list_alternative_2(self.input_list_1),
+                         self.expected_solution_1)
+        self.assertEqual(max_in_list_alternative_2(self.input_list_2),
+                         self.expected_solution_2)
+        self.assertEqual(max_in_list_alternative_2(self.input_list_3),
+                         self.expected_solution_3)
+        self.assertEqual(max_in_list_alternative_2(self.input_list_4),
+                         self.expected_solution_4)
+        self.assertEqual(max_in_list_alternative_2(self.input_list_5),
+                         self.expected_solution_5)
+        self.assertEqual(max_in_list_alternative_2(self.input_list_6),
+                         self.expected_solution_6)
+
+
+if __name__ == "__main__":
+    unittest.main()
