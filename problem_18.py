@@ -29,11 +29,12 @@ def pangram_alternative_1(line):
             return False
     return True
 
+
 def pangram_alternative_2(line):
     line = line.lower()
     char_set = set(line)
     letters = [c for c in char_set if c.isalpha()]
-    return len(letters)==26
+    return len(letters) == 26
 
 
 class TestPangram(unittest.TestCase):
@@ -101,6 +102,7 @@ class TestPangram(unittest.TestCase):
                 pangram_alternative_2(test_case["input_str"]),
                 test_case["expected_output"]
             )
+
 
 if __name__ == "__main__":
     unittest.main()
