@@ -15,7 +15,7 @@ def is_valid_type(data: Union[list, str]) -> bool:
     :param data: input parameter
     :type data: list or str
     :return: returns True if data is str or list, False otherwise
-    :rtype: boolean
+    :rtype: bool
     """
     if not isinstance(data, str) and not isinstance(data, list):
         return False

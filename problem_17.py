@@ -1,4 +1,4 @@
-'''
+"""
 Write a version of a palindrome recognizer that
 also accepts phrase palindromes such as "Go hang a
 salami I'm a lasagna hog.", "Was it a rat I
@@ -8,7 +8,7 @@ Otis", "Lisa Bonet ate no basil",
 it as a tired nude Maori", "Rise to vote sir", or the
 exclamation "Dammit, I'm mad!". Note that
 punctuation, capitalization, and spacing are usually ignored
-'''
+"""
 import unittest
 
 

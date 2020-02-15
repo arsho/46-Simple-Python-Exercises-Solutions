@@ -1,4 +1,4 @@
-'''
+"""
 Define a function generate_n_chars()that takes
 an integer n and a character c and returns a string,
 n characters long, consisting only of c:s. For
@@ -9,7 +9,7 @@ in that you can actually write an expression
 "xxxxx". For the sake of the exercise you should
 ignore that the problem can
 be solved in this manner.)
-'''
+"""
 import unittest
 
 
@@ -21,7 +21,7 @@ def generate_n_chars(n, c):
 
 
 def generate_n_chars_alternative(n, c):
-    s = ''.join([c for i in range(n)])
+    s = ''.join([c for _ in range(n)])
     return s
 
 
